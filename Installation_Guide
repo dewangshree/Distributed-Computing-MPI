@@ -13,7 +13,7 @@
 -cd ~/py_mpi
 
 //Create & Edit Python file using VIM
--vim q1.py
+-vim file_name.py
 -Paste Program
 
 //steps inside VM
