@@ -3,19 +3,13 @@ from multiprocessing import Pool
 
 N = 1000000
 
-# sequential
-t = time.time()
-pi = 0
-for i in range(N):
-    x = (i + 0.5)/N
-    pi += 4/(1 + x*x)
-pi_s = pi/N
-ts = time.time() - t
-
-# parallel
 def f(i):
-    x = (i + 0.5)/N
-    return 4/(1 + x*x)
+    x = (i + 0.5) / N
+    return 4 / (1 + x*x)
+
+t = time.time()
+pi_s = sum(f(i) for i in range(N)) / N
+ts = time.time() - t
 
 t = time.time()
 pi_p = sum(Pool().map(f, range(N))) / N
@@ -25,6 +19,7 @@ print("Pi Sequential :", round(pi_s,6))
 print("Time Sequential:", round(ts,4),"sec")
 print("Pi Parallel   :", round(pi_p,6))
 print("Time Parallel :", round(tp,4),"sec")
+
 
 
 #OTPUT
