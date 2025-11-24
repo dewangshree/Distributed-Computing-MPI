@@ -1,0 +1,23 @@
+//Install Requirements (Run once in lab)
+-sudo apt update
+-sudo apt install -y mpich
+-sudo apt install -y python3-pip
+-pip3 install mpi4py --user
+
+//Check installation:
+-mpirun --version
+-python3 -c "import mpi4py; print('MPI4PY OK')"
+
+//Create Folder for MPI programs
+-mkdir ~/py_mpi
+-cd ~/py_mpi
+
+//Create & Edit Python file using VIM
+-vim q1.py
+-Paste Program
+
+//steps inside VM
+ ESC → :wq → ENTER
+
+ //Run command
+mpirun -np 2 python3 q1.py
