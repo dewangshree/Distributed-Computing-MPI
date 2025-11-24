@@ -20,4 +20,4 @@
  ESC → :wq → ENTER
 
  //Run command
-mpirun -np 2 python3 q1.py
+mpirun -np 2 python3 file_name.py
